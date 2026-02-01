@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      background-color: #fff0f5;
+      text-align: center;
+      font-family: Arial;
+      padding-top: 50px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #d6336c;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #adb5bd;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Rapunzel photo -->
+  <img 
+    src="https://i.imgur.com/9XnQZ6H.png" 
+    alt="Rapunzel"
+  />
+
+  <h1 id="question">
+    Will you forgive me as a birthday gift? 🎂❤️
+  </h1>
+
+  <button id="yes" onclick="yesClick()">Yes 💖</button>
+  <button id="no" onclick="noClick()">No 🙄</button>
+
+  <script>
+    let noCount = 0;
+
+    function noClick() {
+      noCount++;
+
+      if (noCount === 1) {
+        question.innerText = "Are you sure? 🥺";
+      } 
+      else if (noCount === 2) {
+        question.innerText = "Please think once more… I really mean it 😔";
+      } 
+      else if (noCount === 3) {
+        question.innerText = "It would hurt me a lot… 💔";
+      } 
+      else {
+        question.innerText = "Okay okay… I know you’ll say YES 😌❤️";
+        document.getElementById("no").style.display = "none";
+      }
+    }
+
+    function yesClick() {
+      window.location.href =
+        "https://api.whatsapp.com/send?text=I%20clicked%20YES%20💖";
+    }
+  </script>
+
+</body>
+</html>
